@@ -1,0 +1,152 @@
+/*
+@author : Pierrick Juy
+@version : 1.0
+*/
+
+/* Global var */
+
+:root {
+	--main-background: url('images/bg3.png') repeat top left;
+	/* Fonts */
+	--main-font: arial, sans-serif;
+	--main-font-size: 16px;
+	--title-font: Times New Roman;
+	--title-font-size: 30px;
+	--title-font-style: italic;
+	/* Colors */
+	--main-color: #1a536f;
+	--secondary-color: #00222c;
+	--tertiary-color: #3d878a;
+	--tertiary-color-25: rgba(61, 135, 138, 0.25);
+	--gradient-linear: linear-gradient(90deg, var(--main-color), var(--secondary-color));
+	/* heights */
+	--height-game: 600px;
+	--height-max: 120px;
+	--height-med: 60px;
+	--height-min: 40px;
+	/* Spaces */
+	--small-space: 10px;
+	--big-space: 120px;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	background: var(--main-background);
+	font-family: var(--main-font);
+	font-size: var(--main-font-size);
+}
+
+/********
+CSS ASIDE
+*********/
+
+aside {
+	width: 25%;
+	float: left;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.5);
+	border-right: solid 5px white;
+}
+
+/* USER INFOS */
+
+#user-info {
+	padding: var(--small-space);
+	background-color: var(--tertiary-color);
+	color: white;
+	float: left;
+	width: 100%;
+}
+
+#user-name {
+	font-family: var(--title-font);
+	font-style: var(--title-font-style);
+	font-size: var(--title-font-size);
+	text-align: center;
+}
+
+#user-photo {
+	border: solid 3px;
+	width: 250px;
+	height: 250px;
+	margin: var(--small-space) auto;
+	border-radius: 250px;
+	overflow: hidden;
+}
+
+#user-photo img {
+	width: 100%;
+}
+
+#user-info #info {
+	border-top: solid 1px;
+	padding: var(--small-space) 0;
+	float: left;
+	width: 100%;
+}
+
+#info div {
+	width: 100%;
+	float: left;
+}
+
+#info span {
+	float: left;
+}
+
+#info .label {
+	font-size: 16px;
+	padding: 0 5px 0 0;
+	line-height: initial;
+}
+
+.user-hobbies ul {
+	padding: 0 0 0 20px;
+	list-style-type: "- ";
+}
+
+/* MENU */
+
+#exo-menu {
+	float: left;
+	width: 100%;
+}
+
+#exo-menu ul {
+	list-style: none;
+	padding: 0;
+}
+
+#exo-menu li {
+	color: var(--tertiary-color);
+	border-top: solid 1px;
+	padding: var(--small-space);
+}
+
+#exo-menu li:first-child {
+	border: none;
+}
+
+#exo-menu li:hover {
+	cursor: pointer;
+	background-color: var(--tertiary-color-25);
+	font-weight: bold;
+}
+
+#exo-menu li.active {
+	background-color: var(--tertiary-color-25);
+	font-weight: bold;
+}
+
+/* Main */
+
+main {
+	width: 75%;
+	height: 100%;
+	float: left;
+	min-height: 100%;
+}
