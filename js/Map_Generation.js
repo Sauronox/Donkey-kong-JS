@@ -34,8 +34,6 @@ class Map_Generation {
     return this.file;
   }
 }
-var array = [];
-var array2d = [[][][]]
 const MapDK = new Map_Generation("../map/map1.txt");
 (() => {
   let parent = document.querySelector("main");
@@ -52,6 +50,7 @@ let ctx = canvas.getContext("2d");
 
 function drawDK() {
   let i = 0, X = 0, Y = 25, width = 50, height = 25;
+  ctx.beginPath(); //start draw on canvas
   while (i != MapDK.getFileMap.length){
     if (MapDK.getFileMap[i] == "_") {
         console.log('in condition');
@@ -61,10 +60,11 @@ function drawDK() {
         X += 50;
       };
 
-      floor.src = "./images/floorDK.png";
+      floor.src = "../images/floorDK.png";
     }
   i++;
 }
+ctx.closePath(); //end draw on canvas
 }
 drawDK();
 
@@ -84,3 +84,32 @@ const colision = (caracter)=>{
     }
   }
 }
+
+document.addEventListener('keydown', (event)=>{
+  if(event.keyCode == 37){ // left
+    caracter.isLeft = true;
+  }else if(event.keyCode == 39){ // right
+    caracter.isLeft = true;
+  }else if(event.keyCode == 38){ // up
+    caracter.isUp = true;
+  }else if(event.keyCode == 40){ // down
+    caracter.isDown = true;
+  }
+});
+
+document.addEventListener('keyup', (event)=>{
+  if(event.keyCode == 37){ // left
+    caracter.isLeft = false;
+  }else if(event.keyCode == 39){ // right
+    caracter.isLeft = false;
+  }else if(event.keyCode == 38){ // up
+    caracter.isUp = false;
+  }else if(event.keyCode == 40){ // down
+    caracter.isDown = false;
+  }
+});
+document.addEventListener('keypress', (event)=>{
+  if(event.keyCode == 38){ // jump
+    caracter.jump = true;
+  }
+});
