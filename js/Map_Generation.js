@@ -34,6 +34,8 @@ class Map_Generation {
     return this.file;
   }
 }
+var array = [];
+var array2d = [[][][]]
 const MapDK = new Map_Generation("../map/map1.txt");
 (() => {
   let parent = document.querySelector("main");
@@ -70,13 +72,14 @@ drawDK();
 /**
  * 
  * @param {Object} caracter 
- * @param {Array} map 'Doit être un teableau de la map en 2D'
  */
-const getCollision = (caracter, map)=>{
+const colision = (caracter)=>{
   for(let i = 0;i<map.length;i++){
     for(let j = 0;j<map[i].length;i++){
-        if(caracter.y+caracter.height == block.y){
-
+        if(caracter.x+caracter.width > 0 && caracter.isRight ==  true){
+         caracter.x -= 2; 
+        }else if(caracter.x+caracter.width <  canvas.clientWidth && caracter.isLeft == true){
+          caracter.x += 2; 
         }
     }
   }
